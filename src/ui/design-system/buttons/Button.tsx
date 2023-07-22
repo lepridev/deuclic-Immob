@@ -13,8 +13,10 @@ interface Props {
     | "danger";
   size?: "small" | "medium" | "large";
   icon?: { icon: IconType };
+  icoSize?: number;
   icoPosition?: "left" | "right";
   icoTheme?: "accent" | "secondary" | "gray";
+  icoColor?: string;
   className?: "string";
 }
 
@@ -24,39 +26,41 @@ export const Button = ({
   variant = "primary",
   size = "small",
   icon,
+  icoSize = 20,
   icoPosition = "right",
   icoTheme = "accent",
+  icoColor,
 }: Props) => {
   let variantStyle: string = "";
   let sizeStyle: string = "";
 
   switch (variant) {
     case "primary":
-      variantStyle = "bg-primary text-white hover:bg-primary-400 rounded";
+      variantStyle = "bg-[#0fca98] text-white hover:bg-[#0fcaa5] rounded-md";
       break;
     case "secondary":
-      variantStyle = "bg-secondary text-white hover:bg-secondary-400 rounded";
+      variantStyle = "bg-[#ffa50d] text-white hover:bg-[#ffb20d] rounded-md";
       break;
     case "outline":
       variantStyle =
-        "bg-white text-black border border-gray hover:bg-gray-400 rounded";
+        "bg-white text-black border border-gray hover:bg-gray-400 rounded-md";
       break;
     case "success":
       variantStyle =
-        "bg-alert-success text-black hover:bg-secondary-400 rounded";
+        "bg-alert-success text-black hover:bg-secondary-400 rounded-md";
       break;
     case "warning":
       variantStyle =
-        "bg-alert-warning text-white hover:bg-secondary-400 rounded";
+        "bg-alert-warning text-white hover:bg-secondary-400 rounded-md";
       break;
     case "danger":
       variantStyle =
-        "bg-alert-danger text-white hover:bg-secondary-400 rounded";
+        "bg-alert-danger text-white hover:bg-secondary-400 rounded-md";
       break;
     case "ico":
       if (icoTheme === "accent") {
         variantStyle =
-          "bg-primary text-white hover:bg-primary-400 rounded-full";
+          "bg-[#0fca98] text-white hover:bg-primary-400 rounded-full";
       } else if (icoTheme === "gray") {
         variantStyle = "bg-gray-400 text-white rounded-full";
       }
@@ -68,21 +72,21 @@ export const Button = ({
       sizeStyle = `${
         variant === "ico"
           ? "w-[30px] h-[30px] flex items-center justify-center"
-          : "px-[14px] py-[4px] font-medium text-caption2"
+          : "px-[14px] py-[4px] font-medium text-[12px]"
       }`;
       break;
     case "medium":
       sizeStyle = `${
         variant === "ico"
           ? "w-[40px] h-[40px] flex items-center justify-center"
-          : "px-[18px] py-[4px] font-medium text-caption1"
+          : "px-[18px] py-[4px] font-medium text-[13px]"
       }`;
       break;
     case "large":
       sizeStyle = `${
         variant === "ico"
           ? "w-[50px] h-[50px] flex items-center justify-center"
-          : "px-[22px] py-[5px] font-medium text-caption1"
+          : "px-[22px] py-[5px] font-medium text-[14px]"
       }`;
       break;
   }
@@ -90,25 +94,22 @@ export const Button = ({
   return (
     <button className={clsx(variantStyle, sizeStyle, className)}>
       {icon && variant === "ico" ? (
-        <icon.icon size={24} className={`text-${icoTheme}`} />
+        <icon.icon size={icoSize} color={icoColor} />
+      ) : icon && variant !== "ico" ? (
+        <div className="flex flex-row items-center gap-2">
+          {icoPosition === "left" && (
+            <>
+              <icon.icon size={24} color={icoColor} /> {children}
+            </>
+          )}
+          {icoPosition === "right" && (
+            <>
+              {children} <icon.icon size={24} color={icoColor} />
+            </>
+          )}
+        </div>
       ) : (
-        icon &&
-        icoPosition && (
-          <div>
-            {icoPosition === "left" && (
-              <div className="flex flex-row items-center justify-center gap-2">
-                <icon.icon size={24} />
-                {children}
-              </div>
-            )}
-            {icoPosition === "right" && (
-              <div className="flex flex-row items-center justify-center gap-2">
-                {children}
-                <icon.icon size={24} />
-              </div>
-            )}
-          </div>
-        )
+        children
       )}
     </button>
   );

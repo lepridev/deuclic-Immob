@@ -26,13 +26,13 @@ interface Props {
     | "danger"
     | "success"
     | "warning";
-  weight?: "regular" | "medium";
+  weight?: "regular" | "medium" | "semibold" | "bold";
   className?: string;
   children: React.ReactNode;
 }
 
 export const Typograpy = ({
-  variant = "h3",
+  variant = "lead",
   component: Component = "div",
   theme = "black",
   weight = "regular",
@@ -40,56 +40,45 @@ export const Typograpy = ({
   children,
 }: Props) => {
   let variantStyle: string = "",
-    colorStyles: string = "";
+    colorStyles: string = "",
+    weightStyles: string = "";
 
   switch (variant) {
     case "display":
-      variantStyle = "text-8xl";
-      break;
-    case "h1":
-      variantStyle = "text-7xl";
-      break;
-    case "h2":
       variantStyle = "text-6xl";
       break;
-    case "h3": //Default
-      variantStyle = "text-5xl";
-      break;
-    case "h4":
-      variantStyle = "text-4xl";
-      break;
-    case "h5":
+    case "h1":
       variantStyle = "text-3xl";
       break;
-    case "lead":
+    case "h2":
       variantStyle = "text-2xl";
       break;
-    case "body-lg":
+    case "h3": //Default
+      variantStyle = "text-xl";
+      break;
+    case "h4":
       variantStyle = "text-lg";
+      break;
+    case "lead":
+      variantStyle = "text-base";
+      break;
+    case "body-lg":
+      variantStyle = "text-sm";
       break;
     case "body-base":
       variantStyle = "text-base";
       break;
     case "body-sm":
-      variantStyle = "text-sm";
+      variantStyle = "text-xs";
       break;
     case "caption1":
-      variantStyle = "caption1";
-      break;
-    case "caption2":
-      variantStyle = "caption2";
-      break;
-    case "caption3":
-      variantStyle = "caption3";
-      break;
-    case "caption4":
-      variantStyle = "caption4";
+      variantStyle = "text-[10px]";
       break;
   }
 
   switch (theme) {
     case "black":
-      colorStyles = "text-gray";
+      colorStyles = "text-[#2d3954]";
       break;
     case "gray":
       colorStyles = "text-gray-700";
@@ -98,10 +87,10 @@ export const Typograpy = ({
       colorStyles = "text-white";
       break;
     case "primary":
-      colorStyles = "text-primary";
+      colorStyles = "text-[#0fca98]";
       break;
     case "secondary":
-      colorStyles = "text-secondary";
+      colorStyles = "text-[#ffa50d]";
       break;
     case "danger":
       colorStyles = "text-alert-danger";
@@ -114,13 +103,29 @@ export const Typograpy = ({
       break;
   }
 
+  switch (weight) {
+    case "regular":
+      weightStyles = "font-normal";
+      break;
+    case "medium":
+      weightStyles = "font-normal";
+      break;
+    case "semibold":
+      weightStyles = "font-semibold";
+      break;
+    case "bold":
+      weightStyles = "font-bold";
+      break;
+  }
+
   return (
     <Component
       className={clsx(
+        className,
         variantStyle,
         colorStyles,
-        weight === "medium" && "font-medium",
-        className
+        weightStyles,
+        weight === "medium" && "font-medium"
       )}
     >
       {children}
