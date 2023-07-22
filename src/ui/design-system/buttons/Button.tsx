@@ -11,7 +11,7 @@ interface Props {
     | "success"
     | "warning"
     | "danger";
-  size?: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large" | "fullWidth";
   icon?: { icon: IconType };
   icoSize?: number;
   icoPosition?: "left" | "right";
@@ -87,6 +87,13 @@ export const Button = ({
         variant === "ico"
           ? "w-[50px] h-[50px] flex items-center justify-center"
           : "px-[22px] py-[5px] font-medium text-[14px]"
+      }`;
+      break;
+    case "fullWidth":
+      sizeStyle = `${
+        variant === "ico"
+          ? "w-[50px] h-[50px] flex items-center justify-center"
+          : "w-full px-[22px] py-[10px] font-medium text-[14px]"
       }`;
       break;
   }

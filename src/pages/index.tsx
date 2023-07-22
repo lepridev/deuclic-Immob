@@ -5,13 +5,15 @@ import { Button } from "@/ui/design-system/buttons/Button";
 import { AiFillGithub } from "react-icons/ai";
 
 import OffertBoxHorizontal from "@/ui/design-system/box/OffertBoxHorizontal";
+import PriceBox from "@/ui/design-system/box/PriceBox";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <main className="p-5">
-      <OffertBoxHorizontal />
+      {/* <OffertBoxHorizontal /> */}
+      {/* <PriceBox /> */}
     </main>
   );
 }
