@@ -57,6 +57,8 @@ export const Button = ({
       if (icoTheme === "accent") {
         variantStyle =
           "bg-primary text-white hover:bg-primary-400 rounded-full";
+      } else if (icoTheme === "gray") {
+        variantStyle = "bg-gray-400 text-white rounded-full";
       }
       break;
   }
@@ -88,7 +90,7 @@ export const Button = ({
   return (
     <button className={clsx(variantStyle, sizeStyle, className)}>
       {icon && variant === "ico" ? (
-        <icon.icon size={24} />
+        <icon.icon size={24} className={`text-${icoTheme}`} />
       ) : (
         icon &&
         icoPosition && (

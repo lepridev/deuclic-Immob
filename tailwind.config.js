@@ -133,7 +133,7 @@ module.exports = {
         },
       ],
       caption3: [
-        "11px",
+        "10px",
         {
           lineHeight: "18px",
           letterSpacing: "-0.5px",
@@ -141,7 +141,7 @@ module.exports = {
         },
       ],
       caption4: [
-        "10px",
+        "8px",
         {
           lineHeight: "15px",
           letterSpacing: "-0.2px",
@@ -149,10 +149,12 @@ module.exports = {
         },
       ],
     },
-    borderRadius: {
-      DEFAULT: "8px",
-      full: "999px",
-    },
+    // borderRadius: {
+    //   DEFAULT: "8px",
+    //   full: "999px",
+
+    // },
+
     extend: {},
   },
   plugins: [],
