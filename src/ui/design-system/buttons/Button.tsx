@@ -17,7 +17,7 @@ interface Props {
   icoPosition?: "left" | "right";
   icoTheme?: "accent" | "secondary" | "gray";
   icoColor?: string;
-  className?: "string";
+  className?: string;
 }
 
 export const Button = ({

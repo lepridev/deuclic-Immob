@@ -6,6 +6,7 @@ import { AiFillGithub } from "react-icons/ai";
 
 import OffertBoxHorizontal from "@/ui/design-system/box/OffertBoxHorizontal";
 import PriceBox from "@/ui/design-system/box/PriceBox";
+import SearchBox from "@/ui/design-system/inputs/SearchBox";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,6 +15,7 @@ export default function Home() {
     <main className="p-5">
       {/* <OffertBoxHorizontal /> */}
       {/* <PriceBox /> */}
+      <SearchBox />
     </main>
   );
 }
