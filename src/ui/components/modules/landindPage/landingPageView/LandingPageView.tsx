@@ -15,6 +15,8 @@ import AgentBox from "@/ui/design-system/box/AgentBox";
 import PriceBox from "@/ui/design-system/box/PriceBox";
 import Image from "next/image";
 import ArticleBox from "@/ui/design-system/box/ArticleBox";
+import CallToAction from "@/ui/design-system/CTA/CallToAction";
+import Banner from "@/ui/design-system/banner/Banner";
 
 type Props = {};
 
@@ -136,6 +138,9 @@ const LandingPageView = (props: Props) => {
 
   return (
     <div>
+      <div>
+        <Banner />
+      </div>
       <Container>
         <div>
           <Titleline
@@ -298,6 +303,8 @@ const LandingPageView = (props: Props) => {
           </div>
         </Container>
       </div>
+
+      <CallToAction />
     </div>
   );
 };
