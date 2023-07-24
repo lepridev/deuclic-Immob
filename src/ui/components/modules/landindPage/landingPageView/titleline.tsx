@@ -8,7 +8,7 @@ interface Props {
 
 export const Titleline = ({ title, description }: Props) => (
   <div className="w-full flex flex-col items-center my-10">
-    <Typograpy variant="h1" weight="semibold">
+    <Typograpy variant="h3" weight="semibold">
       {title}
     </Typograpy>
     <Typograpy>{description}</Typograpy>
