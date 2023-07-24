@@ -86,7 +86,7 @@ export const Button = ({
       sizeStyle = `${
         variant === "ico"
           ? "w-[50px] h-[50px] flex items-center justify-center"
-          : "px-[22px] py-[5px] font-medium text-[14px]"
+          : "px-[22px] py-[12px] font-medium text-[14px]"
       }`;
       break;
     case "fullWidth":

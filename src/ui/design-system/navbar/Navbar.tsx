@@ -42,7 +42,7 @@ const Navbar = (props: Props) => {
           Résidence Meublé
         </Typograpy>
       </div>
-      <div className="flex flex-row gap-2">
+      <div className="flex flex-row items-center justify-center gap-2">
         <Button>Connexion</Button>
         <Button variant="secondary">Inscription</Button>
       </div>
