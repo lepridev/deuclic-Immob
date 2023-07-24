@@ -16,7 +16,7 @@ const CityOffertList = ({
   offertNumber = 10,
 }: Props) => {
   return (
-    <div className="w-[330px] h-[300px] border border-gray-10 rounded-md cursor-pointer">
+    <div className="w-[330px] h-[300px] bg-white border border-gray-10 rounded-md cursor-pointer">
       <div className="flex flex-row items-start justify-start w-full h-[60%] rounded-md relative overflow-hidden ">
         <Image
           src={imgSrc}

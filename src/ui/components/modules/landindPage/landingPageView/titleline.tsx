@@ -11,6 +11,8 @@ export const Titleline = ({ title, description }: Props) => (
     <Typograpy variant="h3" weight="semibold">
       {title}
     </Typograpy>
-    <Typograpy>{description}</Typograpy>
+    <Typograpy variant="body-sm" className="max-w-lg text-center">
+      {description}
+    </Typograpy>
   </div>
 );

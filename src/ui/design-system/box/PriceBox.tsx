@@ -44,7 +44,7 @@ const PriceBox = ({
       <div className="space-y-5 py-4">
         <Typograpy
           variant="body-lg"
-          weight="semibold"
+          weight="regular"
           theme="black"
           className="border-b border-dashed pb-2 border-gray-400"
         >
@@ -52,7 +52,7 @@ const PriceBox = ({
         </Typograpy>
         <Typograpy
           variant="body-lg"
-          weight="semibold"
+          weight="regular"
           theme="black"
           className="border-b border-dashed pb-2 border-gray-400"
         >
@@ -60,7 +60,7 @@ const PriceBox = ({
         </Typograpy>
         <Typograpy
           variant="body-lg"
-          weight="semibold"
+          weight="regular"
           theme="black"
           className="border-b border-dashed pb-2 border-gray-400"
         >
@@ -68,7 +68,7 @@ const PriceBox = ({
         </Typograpy>
         <Typograpy
           variant="body-lg"
-          weight="semibold"
+          weight="regular"
           theme="black"
           className="border-b border-dashed pb-2 border-gray-400"
         >
@@ -76,7 +76,7 @@ const PriceBox = ({
         </Typograpy>
         <Typograpy
           variant="body-lg"
-          weight="semibold"
+          weight="regular"
           theme="black"
           className="border-b border-dashed pb-2 border-gray-400"
         >

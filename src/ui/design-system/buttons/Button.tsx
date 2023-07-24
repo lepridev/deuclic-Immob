@@ -106,12 +106,12 @@ export const Button = ({
         <div className="flex flex-row items-center gap-2">
           {icoPosition === "left" && (
             <>
-              <icon.icon size={24} color={icoColor} /> {children}
+              <icon.icon size={icoSize} color={icoColor} /> {children}
             </>
           )}
           {icoPosition === "right" && (
             <>
-              {children} <icon.icon size={24} color={icoColor} />
+              {children} <icon.icon size={icoSize} color={icoColor} />
             </>
           )}
         </div>
