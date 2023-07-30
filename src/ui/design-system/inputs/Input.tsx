@@ -8,8 +8,8 @@ import { FiMapPin } from "react-icons/fi";
 interface Props {
   type?: "text" | "email" | "password";
   placeholder: string;
-  register: any;
-  errors: any;
+  register?: any;
+  errors?: any;
   errorMsg?: string;
   id: string;
   required?: boolean;

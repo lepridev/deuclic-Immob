@@ -5,7 +5,7 @@ type Props = {};
 
 const OffertPageContainer = (props: Props) => {
   return (
-    <div>
+    <div className="bg-[#F3F7FD] ">
       <OffertPageView />
     </div>
   );
