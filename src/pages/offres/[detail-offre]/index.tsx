@@ -3,18 +3,15 @@ import OffertPageContainer from "@/ui/components/modules/offerts/offertPages/off
 import { Typograpy } from "@/ui/design-system/typography/Typography";
 import React from "react";
 
-type Props = {};
-
-const index = (props: Props) => {
+const DetailOffre = () => {
   return (
     <Layout>
       <div>
-        <Typograpy variant="h2">
-          Liste des Offres doit etre affiché ici
-        </Typograpy>
+        <Typograpy variant="h2">Detail Offre</Typograpy>
+        <OffertPageContainer />
       </div>
     </Layout>
   );
 };
 
-export default index;
+export default DetailOffre;

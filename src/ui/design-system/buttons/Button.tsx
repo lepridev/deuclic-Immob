@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { MouseEventHandler } from "react";
 import { IconType } from "react-icons";
 
 interface Props {
@@ -18,6 +19,7 @@ interface Props {
   icoTheme?: "accent" | "secondary" | "gray";
   icoColor?: string;
   className?: string;
+  handleClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 export const Button = ({
@@ -30,6 +32,7 @@ export const Button = ({
   icoPosition = "right",
   icoTheme = "accent",
   icoColor,
+  handleClick,
 }: Props) => {
   let variantStyle: string = "";
   let sizeStyle: string = "";
@@ -99,7 +102,10 @@ export const Button = ({
   }
 
   return (
-    <button className={clsx(variantStyle, sizeStyle, className)}>
+    <button
+      className={clsx(variantStyle, sizeStyle, className)}
+      onClick={handleClick}
+    >
       {icon && variant === "ico" ? (
         <icon.icon size={icoSize} color={icoColor} />
       ) : icon && variant !== "ico" ? (

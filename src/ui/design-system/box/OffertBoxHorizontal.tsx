@@ -6,6 +6,7 @@ import { BiArea } from "react-icons/bi";
 import { Typograpy } from "../typography/Typography";
 import { Button } from "../buttons/Button";
 import { AiFillHeart } from "react-icons/ai";
+import { useRouter } from "next/router";
 
 interface Props {
   orientation?: "horizontal" | "vertical";
@@ -34,6 +35,11 @@ const OffertBoxHorizontal = ({
   city = "Abidjan, Cocody",
   buttonLabel = "voir",
 }: Props) => {
+  const router = useRouter();
+  const handleClick = () => {
+    router.push("/offres/detail-offre");
+  };
+
   return (
     <div className=" w-[330px] h-[400px] border border-gray-10 rounded-md">
       <div className=" flex flex-row items-start justify-start w-full h-[48%] relative">
@@ -89,7 +95,7 @@ const OffertBoxHorizontal = ({
               {city}
             </Typograpy>
           </div>
-          <Button>{buttonLabel}</Button>
+          <Button handleClick={handleClick}>{buttonLabel}</Button>
         </div>
       </div>
     </div>

@@ -17,6 +17,7 @@ import Image from "next/image";
 import ArticleBox from "@/ui/design-system/box/ArticleBox";
 import CallToAction from "@/ui/design-system/CTA/CallToAction";
 import Banner from "@/ui/design-system/banner/Banner";
+import Link from "next/link";
 
 type Props = {};
 
@@ -138,9 +139,12 @@ const LandingPageView = (props: Props) => {
 
   return (
     <div>
+      {/* Banner */}
       <div>
         <Banner />
       </div>
+
+      {/* Recent Offers */}
       <Container>
         <div>
           <Titleline
@@ -165,14 +169,16 @@ const LandingPageView = (props: Props) => {
             ))}
           </div>
           <div className="flex items-center justify-center mt-5">
-            <Button
-              variant="secondary"
-              size="large"
-              icoPosition="right"
-              icon={{ icon: MdKeyboardArrowRight }}
-            >
-              Voir plus doffres...
-            </Button>
+            <Link href={"/offres"}>
+              <Button
+                variant="secondary"
+                size="large"
+                icoPosition="right"
+                icon={{ icon: MdKeyboardArrowRight }}
+              >
+                Voir plus doffres...
+              </Button>
+            </Link>
           </div>
         </div>
       </Container>
